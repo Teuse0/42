@@ -12,7 +12,7 @@
 
 #include "../cub3d.h"
 
-static int	ft_arrlen(char **arr)
+int	ft_arrlen(char **arr)
 {
 	int	i;
 

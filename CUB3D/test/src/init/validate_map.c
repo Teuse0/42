@@ -14,6 +14,13 @@
 
 static int	is_closed(int i, int j)
 {
+	int	k;
+	k = 0;
+	while (data()->map[k])
+	{
+		printf("%s", data()->map[k]);
+		k++;
+	}
 	if (data()->map[i][j] == '0' \
 		|| (data()->map[i][j] != '1' && data()->map[i][j] != ' '))
 	{

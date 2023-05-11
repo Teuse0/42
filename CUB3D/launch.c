@@ -86,6 +86,8 @@ int	ft_key(int key, t_data *data)
 {
 	if (key == ESC)
 		ft_exit(data);
+	if (key == W)
+		printf("W\n");
 	return (0);
 }
 
@@ -107,12 +109,13 @@ int	ft_launch(t_data *data)
 	data->img.addr = addr;
 	draw_floor(data);
 	draw_ceiling(data);
-	//raycast_loop(data);
+	raycast_loop(data);
 	draw_minimap(data);
 	/*hooks();
 	data->var.frame_time = 16 / 1000.0;
 	data->var.move_speed = data->var.frame_time * 5.0;
 	data->var.rot_speed = data->var.frame_time * 3.0;*/
+	printf("1\n");
 	mlx_put_image_to_window(data->mlx, data->win, data->img.ptr, 0, 0);
 	mlx_destroy_image(data->mlx, data->img.ptr);
 	mlx_key_hook(data->win, ft_key, data);

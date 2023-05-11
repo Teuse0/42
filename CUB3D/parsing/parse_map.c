@@ -62,7 +62,8 @@ int	ft_get_height(char *file)
 		line = get_next_line(fd);
 		if (line == NULL)
 			break ;
-		i++;
+		if (line[0] != '\n')
+			i++;
 		free(line);
 		line = NULL;
 	}
@@ -84,8 +85,11 @@ int	parse_map(char *file, int fd, t_data *data)
 		line = get_next_line(fd);
 		if (line == NULL)
 			break ;
-		data->map[i] = ft_strdup(line);
-		i++;
+		if (line[0] != '\n')
+		{
+			data->map[i] = ft_strdup(line);
+			i++;
+		}
 		free(line);
 		line = NULL;
 	}

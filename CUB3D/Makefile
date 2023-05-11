@@ -14,7 +14,7 @@ NAME	= cub3D
 
 REMOVE = rm -rf
 
-LFLAGS = -L mlx_linux -lXext -lX11 -L libft -lft
+LFLAGS = -L mlx_linux -lXext -lX11 -L libft -lft -lm
 MLX 	= minilibx-linux/libmlx.a
 MLX_2	= minilibx-linux/libmlx_Linux.a
 MLX_PATH = minilibx-linux
@@ -30,7 +30,10 @@ SOURCES = 	cub3d.c \
 		launch.c \
 		minimap.c \
 		init/init.c \
-		init/init_colors.c
+		init/init_colors.c \
+		init/init_textures.c \
+		raycasting.c \
+		check_chars.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
